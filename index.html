@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Библиотека — Главная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">
+  <img src="img/logo.png" alt="Логотип" width="30" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+  <span>Библиотека</span></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Открыть меню">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+      <nav class="nav" aria-label="Главное меню">
+        <ul class="nav__list">
+          <li><a href="about.html">О библиотеке</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="events.html">Мероприятия</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a class="nav__a11y" href="accessibility.html" title="Версия для слабовидящих">👁</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1>Добро пожаловать в библиотеку</h1>
+          <p>Книги, знания и пространство для чтения — доступны каждому.</p>
+          <form class="search" action="catalog.html" method="get" role="search">
+            <label class="visually-hidden" for="q">Поиск по каталогу</label>
+            <input id="q" name="q" type="search" placeholder="Поиск по каталогу…" required>
+            <button type="submit" class="btn btn--primary">Искать</button>
+          </form>
+        </div>
+        <div class="hero__img">
+  <img src="img/hero.jpg" alt="Читальный зал библиотеки" width="500"></div>
+      </div>
+    </section>
+
+    <!-- Анонсы -->
+    <section class="section container">
+      <h2>Ближайшие мероприятия</h2>
+      <div class="grid grid--3">
+        <article class="card">
+          <span class="card__date">12 ноября</span>
+          <h3>Встреча с писателем</h3>
+          <p>Обсуждение современной прозы и автограф-сессия.</p>
+          <a class="link" href="events.html">Подробнее →</a>
+        </article>
+        <article class="card">
+          <span class="card__date">18 ноября</span>
+          <h3>Книжный клуб</h3>
+          <p>Разбираем роман месяца вместе с читателями.</p>
+          <a class="link" href="events.html">Подробнее →</a>
+        </article>
+        <article class="card">
+          <span class="card__date">25 ноября</span>
+          <h3>Лекция по истории</h3>
+          <p>Открытая лекция для школьников и студентов.</p>
+          <a class="link" href="events.html">Подробнее →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Новые поступления -->
+    <section class="section container section--alt">
+      <h2>Новые поступления</h2>
+      <div class="grid grid--3">
+        <article class="card">
+          <img src="img/book1.jpg" alt="Обложка книги Мастер и Маргарита" style="margin-bottom: 15px; border-radius: 8px;">
+          <h3>«Мастер и Маргарита»</h3>
+          <p>М. Булгаков</p>
+        </article>
+        <article class="card">
+          <img src="img/book2.jpg" alt="Обложка книги Тихий Дон" style="margin-bottom: 15px; border-radius: 8px;">
+          <h3>«Тихий Дон»</h3>
+          <p>М. Шолохов</p>
+        </article>
+        <article class="card">
+          <img src="img/book3.jpg" alt="Обложка книги Пикник на обочине" style="margin-bottom: 15px; border-radius: 8px;">
+          <h3>«Пикник на обочине»</h3>
+          <p>А. и Б. Стругацкие</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Плитки разделов -->
+    <section class="section container">
+      <h2>Разделы сайта</h2>
+      <div class="grid grid--4">
+        <a class="tile" href="catalog.html">Каталог</a>
+        <a class="tile" href="services.html">Услуги</a>
+        <a class="tile" href="events.html">Мероприятия</a>
+        <a class="tile" href="contacts.html">Контакты</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><strong>Адрес</strong><p>ул. Книжная, 1</p><p>Пн–Сб: 9:00–19:00</p></div>
+      <div><strong>Контакты</strong><p>+7 (000) 000-00-00</p><p>info@library.ru</p></div>
+      <div><strong>Доступность</strong><p><a href="accessibility.html">Версия для слабовидящих</a></p></div>
+    </div>
+    <p class="footer__copy">© 2026 Библиотека</p>
+  </footer>
+    <script>
+    if (localStorage.getItem('a11yMode') === 'on') {
+      document.body.classList.add('a11y');
+    }
+
+    const btn = document.getElementById('a11y-toggle');
+    
+    if (btn) {
+
+      if (document.body.classList.contains('a11y')) {
+        btn.textContent = 'Обычная версия сайта';
+      }
+ыы
+      btn.addEventListener('click', function () {
+        document.body.classList.toggle('a11y');
+        
+        if (document.body.classList.contains('a11y')) {
+          localStorage.setItem('a11yMode', 'on');
+          btn.textContent = 'Обычная версия сайта';
+        } else {
+          localStorage.setItem('a11yMode', 'off');
+          btn.textContent = 'Версия для слабовидящих';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
